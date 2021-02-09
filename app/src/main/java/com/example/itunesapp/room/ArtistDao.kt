@@ -11,6 +11,6 @@ interface ArtistDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArtistDetails(artistEntity: ArtistEntity)
 
-    @Query("Select *from artist_table where artistName=:name")
+    @Query("Select *from artist_table where queryName=:name")
     suspend fun searchArtist(name:String):List<ArtistEntity>
 }
